@@ -1,0 +1,18 @@
+{
+"version": "2.0.0",
+"tasks": [
+    {
+    "label": "Open Live Server URL in Browser",
+    "type": "shell",
+    "command": "Start-Process 'http://127.0.0.1:5500'",
+    "windows": {
+        "shell": {
+        "executable": "powershell.exe",
+        "args": ["-Command"]
+        }
+    },
+    "problemMatcher": [],
+    "group": "build"
+    }
+]
+}
