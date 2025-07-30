@@ -1,0 +1,61 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #00d0ff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centered headings */
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Profile image */
+img[alt="Faculty Image"] {
+    border-radius: 50%;
+    border: 3px solid #3498db;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.1);
+}
+
+/* Main table */
+table {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Table borders */
+table, th, td {
+    border: 1px solid #bfc9d1;
+    border-collapse: collapse;
+}
+
+/* Table cell padding */
+td, th {
+    padding: 12px 20px;
+}
+
+/* Links as buttons */
+a {
+    color: #fff;
+    background: #3498db;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+a:hover {
+    background: #217dbb;
+}
+
+/* List style inside table */
+td li {
+    list-style: none;
+    margin-bottom: 8px;
+}
