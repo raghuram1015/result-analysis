@@ -59,3 +59,146 @@ td li {
     list-style: none;
     margin-bottom: 8px;
 }
+
+/* Marks form styles */
+.marks-form {
+    margin-top: 40px;
+}
+
+.marks-form table {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.1);
+    padding: 24px 32px;
+}
+
+.marks-form label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.marks-form input[type="text"],
+.marks-form input[type="number"],
+.marks-form select {
+    width: 180px;
+    padding: 8px;
+    border: 1px solid #bfc9d1;
+    border-radius: 5px;
+    font-size: 1em;
+    margin: 4px 0;
+    background: #eaf6fb;
+    transition: border-color 0.2s;
+}
+
+.marks-form input[type="text"]:focus,
+.marks-form input[type="number"]:focus,
+.marks-form select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.marks-form button[type="submit"] {
+    color: #fff;
+    background: #3498db;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.marks-form button[type="submit"]:hover {
+    background: #217dbb;
+}
+
+/* Marks table styles */
+.marks-table {
+    width: 80%;
+    margin: 40px auto 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.1);
+    border-collapse: collapse;
+}
+
+.marks-table th, .marks-table td {
+    padding: 12px 20px;
+    border: 1px solid #bfc9d1;
+    text-align: center;
+}
+
+.marks-table th {
+    background: #eaf6fb;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.edit-btn {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.edit-btn:hover {
+    background: #217dbb;
+}
+
+/* View Marks button styles */
+.view-marks-btn {
+    color: #fff;
+    background: #27ae60;
+    padding: 10px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background 0.2s;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+}
+
+.view-marks-btn:hover {
+    background: #219150;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background: rgba(44, 62, 80, 0.25);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 8% auto;
+    padding: 32px 24px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15);
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #217dbb;
+}

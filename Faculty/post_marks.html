@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Marks</title>
+    <link rel="stylesheet" href="Faculty.css">
 </head>
 <body>
-    
+    <h1>
+        <center>Post Marks</center>
+    </h1>
+    <form class="marks-form" id="marksForm">
+        <table align="center">
+            <tr>
+                <td><label for="studentId">Student ID:</label></td>
+                <td><input type="text" id="studentId" name="studentId" required></td>
+            </tr>
+            <tr>
+                <td><label for="course">Course:</label></td>
+                <td>
+                    <select id="course" name="course" required>
+                        <option value="">Select Course</option>
+                        <option value="Math">Math</option>
+                        <option value="Science">Science</option>
+                        <option value="English">English</option>
+                        <!-- Add more courses as needed -->
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="marks">Marks:</label></td>
+                <td><input type="number" id="marks" name="marks" min="0" max="100" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <button type="submit">Post Marks</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div style="text-align:center; margin-top:20px;">
+        <a href="view_results.html" class="view-marks-btn">View Marks</a>
+    </div>
+    <script>
+        document.getElementById('marksForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const studentId = document.getElementById('studentId').value;
+            const course = document.getElementById('course').value;
+            const marks = document.getElementById('marks').value;
+
+            // Retrieve existing marks
+            let marksData = JSON.parse(localStorage.getItem('marksData') || '[]');
+            marksData.push({ studentId, course, marks });
+            localStorage.setItem('marksData', JSON.stringify(marksData));
+
+            // Redirect to view marks
+            //window.location.href = 'view_marks.html';
+        });
+    </script>
 </body>
 </html>

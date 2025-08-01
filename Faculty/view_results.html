@@ -4,8 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Results</title>
+    <link rel="stylesheet" href="Faculty.css">
 </head>
 <body>
-    
+    <h1>
+        <center>View Results</center>
+    </h1>
+    <table class="marks-table" align="center">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Course</th>
+                <th>Marks</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="marksBody">
+            <!-- Marks rows will be populated here -->
+        </tbody>
+    </table>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Edit Marks</h2>
+            <form id="editForm">
+                <label for="editStudentId">Student ID:</label>
+                <input type="text" id="editStudentId" name="editStudentId" readonly>
+                <br>
+                <label for="editCourse">Course:</label>
+                <input type="text" id="editCourse" name="editCourse" readonly>
+                <br>
+                <label for="editMarks">Marks:</label>
+                <input type="number" id="editMarks" name="editMarks" min="0" max="100" required>
+                <br>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function renderMarks() {
+            const marksBody = document.getElementById('marksBody');
+            marksBody.innerHTML = '';
+            let marksData = JSON.parse(localStorage.getItem('marksData') || '[]');
+            marksData.forEach((entry, idx) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${entry.studentId}</td>
+                    <td>${entry.course}</td>
+                    <td>${entry.marks}</td>
+                    <td>
+                        <button class="edit-btn" data-idx="${idx}">Edit</button>
+                    </td>
+                `;
+                marksBody.appendChild(row);
+            });
+        }
+
+        // Modal logic
+        const modal = document.getElementById('editModal');
+        const closeModal = document.getElementById('closeModal');
+        let currentEditIdx = null;
+
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('edit-btn')) {
+                currentEditIdx = e.target.getAttribute('data-idx');
+                let marksData = JSON.parse(localStorage.getItem('marksData') || '[]');
+                const entry = marksData[currentEditIdx];
+                document.getElementById('editStudentId').value = entry.studentId;
+                document.getElementById('editCourse').value = entry.course;
+                document.getElementById('editMarks').value = entry.marks;
+                modal.style.display = 'block';
+            }
+        });
+
+        closeModal.onclick = function() {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        document.getElementById('editForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let marksData = JSON.parse(localStorage.getItem('marksData') || '[]');
+            marksData[currentEditIdx].marks = document.getElementById('editMarks').value;
+            localStorage.setItem('marksData', JSON.stringify(marksData));
+            modal.style.display = 'none';
+            renderMarks();
+        });
+
+        renderMarks();
+    </script>
 </body>
 </html>

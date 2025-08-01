@@ -12,11 +12,39 @@ h1, h2 {
     color: #2c3e50;
 }
 
-/* Profile image */
+/* Center the main dashboard table */
+table[align="center"] {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+/* Inner table spacing */
+table table {
+    margin: 0 auto;
+}
+
+/* Profile and dashboard images */
+img[alt="Profile Image"],
+img[alt="Results Image"],
+img[alt="Course Image"],
 img[alt="Student Image"] {
     border-radius: 50%;
     border: 3px solid #3498db;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.1);
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: #eaf6fb;
+    padding: 8px;
+}
+
+/* Image hover effect */
+img[alt="Profile Image"]:hover,
+img[alt="Results Image"]:hover,
+img[alt="Course Image"]:hover,
+img[alt="Student Image"]:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.25);
+    border-color: #217dbb;
 }
 
 /* Main table */
@@ -38,6 +66,12 @@ td, th {
     padding: 12px 20px;
 }
 
+/* Table cell alignment */
+td {
+    vertical-align: middle;
+    text-align: center;
+}
+
 /* Links as buttons */
 a {
     color: #fff;
@@ -52,6 +86,16 @@ a {
 
 a:hover {
     background: #217dbb;
+}
+
+/* Heading style */
+h1 {
+    font-size: 2.2em;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
 }
 
 /* List style inside table */
