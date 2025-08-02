@@ -103,3 +103,25 @@ td li {
     list-style: none;
     margin-bottom: 8px;
 }
+
+/* Marks table styles */
+.marks-table {
+    width: 80%;
+    margin: 40px auto 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.1);
+    border-collapse: collapse;
+}
+
+.marks-table th, .marks-table td {
+    padding: 12px 20px;
+    border: 1px solid #bfc9d1;
+    text-align: center;
+}
+
+.marks-table th {
+    background: #eaf6fb;
+    color: #2c3e50;
+    font-weight: bold;
+}

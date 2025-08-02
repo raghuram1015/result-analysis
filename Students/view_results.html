@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Results</title>
+    <link rel="stylesheet" href="students.css">
 </head>
 <body>
-    
+    <h1>
+        <center>View Results</center>
+    </h1>
+    <table class="marks-table" align="center">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Course</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody id="marksBody">
+            <!-- Marks rows will be populated here -->
+        </tbody>
+    </table>
+    <script>
+        function renderMarks() {
+            const marksBody = document.getElementById('marksBody');
+            marksBody.innerHTML = '';
+            let marksData = JSON.parse(localStorage.getItem('marksData') || '[]');
+            marksData.forEach(entry => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${entry.studentId}</td>
+                    <td>${entry.course}</td>
+                    <td>${entry.marks}</td>
+                `;
+                marksBody.appendChild(row);
+            });
+        }
+        renderMarks();
+    </script>
 </body>
 </html>

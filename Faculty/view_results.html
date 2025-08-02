@@ -57,6 +57,7 @@
                     <td>${entry.marks}</td>
                     <td>
                         <button class="edit-btn" data-idx="${idx}">Edit</button>
+                        <button class="delete-btn" data-idx="${idx}">Delete</button>
                     </td>
                 `;
                 marksBody.appendChild(row);
@@ -69,6 +70,7 @@
         let currentEditIdx = null;
 
         document.addEventListener('click', function(e) {
+            // Edit button logic
             if (e.target.classList.contains('edit-btn')) {
                 currentEditIdx = e.target.getAttribute('data-idx');
                 let marksData = JSON.parse(localStorage.getItem('marksData') || '[]');
@@ -77,6 +79,14 @@
                 document.getElementById('editCourse').value = entry.course;
                 document.getElementById('editMarks').value = entry.marks;
                 modal.style.display = 'block';
+            }
+            // Delete button logic
+            if (e.target.classList.contains('delete-btn')) {
+                const idx = e.target.getAttribute('data-idx');
+                let marksData = JSON.parse(localStorage.getItem('marksData') || '[]');
+                marksData.splice(idx, 1);
+                localStorage.setItem('marksData', JSON.stringify(marksData));
+                renderMarks();
             }
         });
 

@@ -149,6 +149,22 @@ td li {
     background: #217dbb;
 }
 
+/* Delete button styles */
+.delete-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background 0.2s;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
 /* View Marks button styles */
 .view-marks-btn {
     color: #fff;
