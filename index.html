@@ -10,30 +10,24 @@
     <h1>
         <center>Dashboard</center>
     </h1>
-    <table border="1" cellpadding="5" cellspacing="0" align="center">
-        <tr>
-            <td>
-                <table border="1" cellpadding="10" cellspacing="0" align="center">                       
-                    <tr>
-                        <td>
-                            <a href="Admin\dashboard.html">
-                                <img src="Admin\Images\profile.png" alt="Admin Image" width="100" height="100">
-                            </a>
-                        </td>
-                        <td>
-                            <a href="Faculty\dashboard.html">
-                                <img src="Faculty\Images\profile.png" alt="Faculty Image" width="100" height="100">
-                            </a>
-                        </td>
-                        <td>
-                            <a href="Students\dashboard.html">
-                                <img src="Students\Images\profile.png" alt="Students Image" width="100" height="100">
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </td> 
-        </tr>
-    </table>
+    <div class="container">
+        <div class="card">
+            <a href="Admin/dashboard.html"><img src="Admin/Images/profile.png" alt="Admin" class="card-icon"></a>
+            <h2><b>Admin Dashboard</b></h2>
+            <a href="Admin/dashboard.html"></a>
+            <p>This is admin dashboard.</p>
+        </div>
+        <div class="card">
+            <a href="Faculty/dashboard.html"><img src="Faculty/Images/profile.png" alt="Faculty" class="card-icon"></a>
+            <h2><b>Faculty Dashboard</b></h2>
+            <a href="Faculty/dashboard.html"></a>
+            <p>This is faculty dashboard.</p>
+        </div>
+        <div class="card">
+            <a href="Students/dashboard.html"><img src="Students/Images/Profile.png" alt="Students" class="card-icon"></a>
+            <h2><b>Students Dashboard</b></h2>
+            <p>This is Students Dashboard.</p>
+        </div>
+    </div>
 </body>
 </html>
