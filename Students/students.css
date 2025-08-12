@@ -57,13 +57,13 @@ table {
 
 /* Table borders */
 table, th, td {
-    border: 1px solid #bfc9d1;
+    border: 0px solid #bfc9d1;
     border-collapse: collapse;
 }
 
 /* Table cell padding */
 td, th {
-    padding: 12px 20px;
+    padding: 5px 10px;
 }
 
 /* Table cell alignment */

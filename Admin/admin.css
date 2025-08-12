@@ -27,9 +27,15 @@ table {
     margin-bottom: 20px;
 }
 
+table[align="center"] {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
 /* Table borders */
 table, th, td {
-    border: 1px solid #bfc9d1;
+    border: 0px solid #bfc9d1;
     border-collapse: collapse;
 }
 
@@ -58,4 +64,31 @@ a:hover {
 td li {
     list-style: none;
     margin-bottom: 8px;
+}
+
+img[alt="Profile Image"],
+img[alt="Results Image"],
+img[alt="Course Image"],
+img[alt="Student Image"],
+img[alt="Marks Image"] {
+    border-radius: 50%;
+    border: 7px solid #3498db;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: #eaf6fb;
+    padding: 8px;
+}
+
+img[alt="Profile Image"]:hover,
+img[alt="Results Image"]:hover,
+img[alt="Course Image"]:hover,
+img[alt="Student Image"]:hover,
+img[alt="Marks Image"]:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.25);
+    border-color: #217dbb;
+}
+
+h3 {
+    text-align: center;
 }
