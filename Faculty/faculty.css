@@ -67,7 +67,7 @@ td {
 }
 
 /* Links as buttons */
-a {
+.nav-link {
     color: #fff;
     background: #3498db;
     padding: 8px 16px;
